@@ -77,23 +77,6 @@ docker network create imagespace-network
 
 ✅Troubleshooting
 
-This script typically:
-
-Applies database migrations
-Initializes required settings
-May create a Django superuser or apply other project-specific configs
-
- **Note:**
- If you see errors like `No such container: deploy-imagespace-mongo-1`, it means your container prefix is likely just `imagespace-*`. Confirm with:
- docker ps
-
-> You should see container names like `imagespace-mongo-1`, `imagespace-girder-1`, etc.
-> If needed, update the `enable-imagespace.sh` script to use the correct container names.
-
-
-
-#### Optional Verifications
-
 - **Check Running Containers**:
 docker ps
 
