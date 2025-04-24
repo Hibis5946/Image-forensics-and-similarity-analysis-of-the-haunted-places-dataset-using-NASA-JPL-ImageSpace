@@ -66,9 +66,6 @@ Enable ImageSpace : Run the setup script to finalize the configuration:
 cd ~/image_space/scripts/deploy
 sh ./imagespace/enable-imagespace.sh
 
-✅Acces the web interface
-http://localhost:8000/
-
 # Check Docker Network: If you face issues related to the Docker network, verify it exists:
 docker network ls
 
@@ -79,9 +76,6 @@ docker network create imagespace-network
 
 - **Check Running Containers**:
 docker ps
-
-- **Access ImageSpace UI**:
-http://localhost:8000/
 
 - **View Logs if Troubleshooting**:
 docker-compose logs -f
@@ -121,6 +115,9 @@ MongoDB should be running correctly.
 Test ImageSpace functionality: You can now access the ImageSpace web interface through the mapped port (e.g., http://localhost:8989 or similar) and ensure everything is working.
 
 ✅ http://localhost:8989
+
+![image](https://github.com/user-attachments/assets/9a034f0f-2d85-4a5c-abf2-a7beb13d4548)
+
 
 If there are any errors or issues along the way, check the logs and address any dependencies or configurations that might be missing.
 
