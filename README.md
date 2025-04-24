@@ -15,7 +15,6 @@ This guide assume image_space folder is inside the root directory
 cd image_space/imagespace_smqtk
 ./smqtk_services.run_images.sh --docker-network deploy_imagespace-network --images /root/image_space/images
 
-
 - `--docker-network deploy_imagespace-network`: Uses the specified Docker network.
 - `--images /root/image_space/images`: Directory containing the images to process.
 
@@ -31,7 +30,6 @@ docker network create deploy_imagespace-network
 cd image_space/scripts/deploy
 IMAGE_DIR=/root/image_space/images docker-compose up -d
 
-
 '''Shut down'''
 cd image_space/scripts/deploy
 IMAGE_DIR=/root/image_space/images docker-compose down
@@ -39,21 +37,8 @@ IMAGE_DIR=/root/image_space/images docker-compose down
 - `IMAGE_DIR=/root/image_space/images`: Specifies where the images are mounted inside the containers.
 - `docker-compose up -d`: Runs the containers in detached mode.
 
-> **Docker Network Warning Fix**:
-> If you see a warning about the existing Docker network label, edit the `docker-compose.yml` file:
->
-> ```yaml
-> networks:
->   imagespace-network:
->     external: true
-> ```
->
-> This tells Docker Compose to use the existing network without trying to manage it.
-
 Ensure you have an appropriate `.env` file or override configurations if required.
-
 ---
-
 
 ✅Create the Docker Network if the imagespace-network doesn’t exist, create it manually
 docker network create imagespace-network
@@ -90,8 +75,6 @@ docker network ls
 # If the imagespace-network is missing, create it again:
 docker network create imagespace-network
 
-
-
 ✅Troubleshooting
 
 This script typically:
@@ -114,14 +97,11 @@ May create a Django superuser or apply other project-specific configs
 - **Check Running Containers**:
 docker ps
 
-
 - **Access ImageSpace UI**:
 http://localhost:8000/
 
 - **View Logs if Troubleshooting**:
 docker-compose logs -f
-
-
 
 ✅  Verify all containers are running
 docker ps
