@@ -1,0 +1,3 @@
+[submodule "image_space"]
+	path = image_space
+	url = https://github.com/nasa-jpl-memex/image_space.git
