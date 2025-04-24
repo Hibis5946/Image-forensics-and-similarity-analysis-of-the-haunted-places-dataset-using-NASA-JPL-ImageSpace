@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:
+  imagespace-mongo:
+    image: mongo:4.4
+    networks:
+      - imagespace-network
+    mem_limit: 2g
+    restart: always
+
+  imagespace-solr:
+    image: solr:6.0
+    networks:
+      - imagespace-network
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - imagespace
+    restart: always
+
+  imagespace-girder:
+    image: nasajplmemex/image_space
+    networks:
+      - imagespace-network
+    ports:
+      - "8989:8989"
+    depends_on:
+      - imagespace-mongo
+      - imagespace-solr
+    volumes:
+      - ${IMAGE_DIR}:/images
+    entrypoint: /imagespace-entrypoint.sh --database mongodb://imagespace-mongo/girder
+    restart: always
+
+  imagespace-imagecat:
+    image: nasajplmemex/imagecat
+    networks:
+      - imagespace-network
+    entrypoint:
+      - /deploy/entrypoint_imagecatdev.sh
+    ports:
+      - "8088:8080"
+      - "8081"
+      - "8888"
+      - "8000"
+      - "9241"
+    volumes:
+      - ${IMAGE_DIR}:/images
+    restart: always
+
+networks:
+  imagespace-network:
+    external: true
