@@ -1,3 +1,7 @@
+Update for image_space
+Author: Sena London, MS APDS Student
+Tools: Open Sources (Copilot, ChatGPT and other tools)
+
 # Haunted-places-dataset-image-forensics-and-similarity-analysis-using-NASA-JPL-ImageSpace
 
 ### Memex ImageSpace Deployment Steps
