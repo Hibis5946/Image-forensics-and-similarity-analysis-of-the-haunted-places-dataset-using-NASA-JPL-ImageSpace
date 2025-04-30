@@ -12,8 +12,8 @@ This guide assume image_space folder is inside the root directory
 ####  Run SMQTK Image Services
 
 ✅This step starts the SMQTK services for image processing such as feature extraction.
-cd image_space/imagespace_smqtk
-./smqtk_services.run_images.sh --docker-network deploy_imagespace-network --images /root/image_space/images
+<br>cd image_space/imagespace_smqtk
+<br>./smqtk_services.run_images.sh --docker-network deploy_imagespace-network --images /root/image_space/images
 
 - `--docker-network deploy_imagespace-network`: Uses the specified Docker network.
 - `--images /root/image_space/images`: Directory containing the images to process.
