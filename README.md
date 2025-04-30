@@ -63,8 +63,8 @@ deploy-imagespace-imagecat-1
 
 Enable ImageSpace : Run the setup script to finalize the configuration:
 ✅Run the setup script to finalize the configuration:
-cd ~/image_space/scripts/deploy
-sh ./imagespace/enable-imagespace.sh
+<br>cd ~/image_space/scripts/deploy
+<br>sh ./imagespace/enable-imagespace.sh
 
 # Check Docker Network: If you face issues related to the Docker network, verify it exists:
 docker network ls
@@ -87,15 +87,15 @@ docker ps
 
 Run:
 
-docker-compose up -d --force-recreate
-Wait 15 to 30 seconds, then check:
-docker ps
+<br>docker-compose up -d --force-recreate
+<br>Wait 15 to 30 seconds, then check:
+<br>docker ps
 
 Make sure all required containers (mongo, solr, girder, imagecat) are up.
 
 Then run:
-cd ~/image_space/scripts/deploy
-sh ./imagespace/enable-imagespace.sh
+<br>cd ~/image_space/scripts/deploy
+<br>sh ./imagespace/enable-imagespace.sh
 
 ✅ Now that you have set up your containers and run the necessary setup script, the next steps are typically:
 
@@ -122,8 +122,8 @@ Test ImageSpace functionality: You can now access the ImageSpace web interface t
 If there are any errors or issues along the way, check the logs and address any dependencies or configurations that might be missing.
 
 ✅This show you the images that are located in the IMAGE_DIR directory on your host machine:
-docker exec -it deploy-imagespace-imagecat-1 /bin/bash
+<br>docker exec -it deploy-imagespace-imagecat-1 /bin/bash
 
-Once inside the container, navigate to the /images directory and list the files:
-ls /images
+<br>Once inside the container, navigate to the /images directory and list the files:
+<br>ls /images
 
