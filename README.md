@@ -27,12 +27,12 @@ docker network create deploy_imagespace-network
 ####  Deploy Core Services Using Docker Compose
 
 ✅Launch the backend services like Solr, Redis, and Django:
-cd image_space/scripts/deploy
-IMAGE_DIR=/root/image_space/images docker-compose up -d
+<br>cd image_space/scripts/deploy
+<br>IMAGE_DIR=/root/image_space/images docker-compose up -d
 
 '''Shut down'''
-cd image_space/scripts/deploy
-IMAGE_DIR=/root/image_space/images docker-compose down
+<br>cd image_space/scripts/deploy
+<br>IMAGE_DIR=/root/image_space/images docker-compose down
 
 - `IMAGE_DIR=/root/image_space/images`: Specifies where the images are mounted inside the containers.
 - `docker-compose up -d`: Runs the containers in detached mode.
@@ -41,13 +41,13 @@ Ensure you have an appropriate `.env` file or override configurations if require
 ---
 
 ✅Create the Docker Network if the imagespace-network doesn’t exist, create it manually
-docker network create imagespace-network
+<br>docker network create imagespace-network
 
 
 ✅Redeploy Core Services Using Docker Compose after recreating network
-cd image_space/scripts/deploy
-IMAGE_DIR=/root/image_space/images docker-compose down
-IMAGE_DIR=/root/image_space/images docker-compose up -d
+<br>cd image_space/scripts/deploy
+<br>IMAGE_DIR=/root/image_space/images docker-compose down
+<br>IMAGE_DIR=/root/image_space/images docker-compose up -d
 
 
 ✅Verify Running Containers
