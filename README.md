@@ -1,7 +1,6 @@
 # Haunted-places-dataset-image-forensics-and-similarity-analysis-using-NASA-JPL-ImageSpace
 
-<br>Author: Sena London, MS APDS Student
-<br> Open Sources : Copilot, ChatGPT and other tools
+
 <br>https://github.com/nasa-jpl-memex/image_space
 
 
@@ -114,10 +113,7 @@ Solr should be accessible at port 8983.
 MongoDB should be running correctly.
 Test ImageSpace functionality: You can now access the ImageSpace web interface through the mapped port (e.g., http://localhost:8989 or similar) and ensure everything is working.
 
-✅ http://localhost:8989
-
 ![image](https://github.com/user-attachments/assets/9a034f0f-2d85-4a5c-abf2-a7beb13d4548)
-
 
 If there are any errors or issues along the way, check the logs and address any dependencies or configurations that might be missing.
 
