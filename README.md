@@ -10,7 +10,7 @@ This guide assume image_space folder is inside the root directory
 
 ####  Run SMQTK Image Services
 
-✅This step starts the SMQTK services for image processing such as feature extraction.
+# This step starts the SMQTK services for image processing such as feature extraction.
 <br>cd image_space/imagespace_smqtk
 <br>./smqtk_services.run_images.sh --docker-network deploy_imagespace-network --images /root/image_space/images
 
@@ -25,7 +25,7 @@ docker network create deploy_imagespace-network
 
 ####  Deploy Core Services Using Docker Compose
 
-✅Launch the backend services like Solr, Redis, and Django:
+# Launch the backend services like Solr, Redis, and Django:
 <br>cd image_space/scripts/deploy
 <br>IMAGE_DIR=/root/image_space/images docker-compose up -d
 
@@ -39,17 +39,17 @@ docker network create deploy_imagespace-network
 Ensure you have an appropriate `.env` file or override configurations if required.
 ---
 
-✅Create the Docker Network if the imagespace-network doesn’t exist, create it manually
+# Create the Docker Network if the imagespace-network doesn’t exist, create it manually
 <br>docker network create imagespace-network
 
 
-✅Redeploy Core Services Using Docker Compose after recreating network
+# Redeploy Core Services Using Docker Compose after recreating network
 <br>cd image_space/scripts/deploy
 <br>IMAGE_DIR=/root/image_space/images docker-compose down
 <br>IMAGE_DIR=/root/image_space/images docker-compose up -d
 
 
-✅Verify Running Containers
+# Verify Running Containers
 docker ps
 
 # You should see containers like:
@@ -60,8 +60,8 @@ deploy-imagespace-imagecat-1
 
 
 
-Enable ImageSpace : Run the setup script to finalize the configuration:
-✅Run the setup script to finalize the configuration:
+# Enable ImageSpace : Run the setup script to finalize the configuration:
+# Run the setup script to finalize the configuration:
 <br>cd ~/image_space/scripts/deploy
 <br>sh ./imagespace/enable-imagespace.sh
 
@@ -71,7 +71,7 @@ docker network ls
 # If the imagespace-network is missing, create it again:
 docker network create imagespace-network
 
-✅Troubleshooting
+# Troubleshooting
 
 - **Check Running Containers**:
 docker ps
@@ -79,7 +79,7 @@ docker ps
 - **View Logs if Troubleshooting**:
 docker-compose logs -f
 
-✅  Verify all containers are running
+# Verify all containers are running
 docker ps
 
 #####
@@ -90,24 +90,17 @@ Run:
 <br>Wait 15 to 30 seconds, then check:
 <br>docker ps
 
-Make sure all required containers (mongo, solr, girder, imagecat) are up.
+# Make sure all required containers (mongo, solr, girder, imagecat) are up.
 
-Then run:
+<br>Then run:
 <br>cd ~/image_space/scripts/deploy
 <br>sh ./imagespace/enable-imagespace.sh
 
-✅ Now that you have set up your containers and run the necessary setup script, the next steps are typically:
+# Check the logs for any issues: If any container is not starting correctly, check its logs for detailed error messages:
+<br>docker logs <container_name>
+<br>docker logs imagespace-girder
 
-Verify that all services are running: Ensure that all containers are up and running by checking the status with:
-docker ps
-This should show you the containers related to ImageSpace, such as imagespace-girder, imagespace-solr, imagespace-mongo, etc., as running.
-
-Check the logs for any issues: If any container is not starting correctly, check its logs for detailed error messages:
-docker logs <container_name>
-For example:
-docker logs imagespace-girder
-
-✅ Test the environment: Once the services are confirmed to be up:
+# Test the environment: Once the services are confirmed to be up:
 Girder should be accessible on the port mapped in your docker-compose.yml (e.g., port 8989).
 Solr should be accessible at port 8983.
 MongoDB should be running correctly.
@@ -115,9 +108,7 @@ Test ImageSpace functionality: You can now access the ImageSpace web interface t
 
 ![image](https://github.com/user-attachments/assets/9a034f0f-2d85-4a5c-abf2-a7beb13d4548)
 
-If there are any errors or issues along the way, check the logs and address any dependencies or configurations that might be missing.
-
-✅This show you the images that are located in the IMAGE_DIR directory on your host machine:
+# This show the images that are located in the IMAGE_DIR directory on your host machine:
 <br>docker exec -it deploy-imagespace-imagecat-1 /bin/bash
 
 <br>Once inside the container, navigate to the /images directory and list the files:
